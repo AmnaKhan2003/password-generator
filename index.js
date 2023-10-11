@@ -34,8 +34,8 @@ function generatePassword(){
     paraEl.innerText='';
     pwEl.innerText='';
     const len=lenEl.value;
-    if(len<4 && len>20){
-        paraEl.innerHTML="Password having length greater than 20 can't be generated!!!!";
+    if(len<4 || len>20){
+        paraEl.innerHTML="Password having length greater than 20 or less than 4 can't be generated!!!!";
     }
     else{
     for(let i=0;i<len;i++){
