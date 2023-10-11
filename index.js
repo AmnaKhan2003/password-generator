@@ -6,6 +6,7 @@ const lowerEl=document.getElementById('lower');
 const numberEl=document.getElementById('number');
 const symbolEl=document.getElementById('symbol');
 const generateEl=document.getElementById('generate');
+const paraEl=document.getElementById('para');
 
 const upperLetters='ABCDEFGIJKLMNOPQRSTUVWXYZ';
 const lowerLetters='abcdefgijklmnopqrstuvwxyz';
@@ -30,13 +31,20 @@ function getSymbol(){
 
 function generatePassword(){
     let password='';
+    paraEl.innerText='';
+    pwEl.innerText='';
     const len=lenEl.value;
+    if(len>20){
+        paraEl.innerHTML="Password having length greater than 20 can't be generated!!!!";
+    }
+    else{
     for(let i=0;i<len;i++){
         const x=generateX();
         console.log(x);
         password+=x;
     }
     pwEl.innerHTML=password;
+}
 
 }
 function generateX(){
